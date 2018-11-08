@@ -8,7 +8,7 @@
 
 ```bash
 
-git clone https://github.com/firewolfxda/PBRP-Installer.git
+git clone https://github.com/PitchBlackRecoveryProject/PBRP-Installer.git
 
 cd PBRP-Installer
 
@@ -23,7 +23,7 @@ bash pbinstaller.sh
 
 ```bash
 
-https://github.com/firewolfxda/PBRP-Installer/archive/master.zip
+https://github.com/PitchBlackRecoveryProject/PBRP-Installer/archive/master.zip
 
 ```
 
