@@ -43,8 +43,6 @@ Usages
 - Linux user open a terminal in PBRP Installer folder and type bash pbinstaller.sh and follow from there
 
 
-Note:
-~This installer will only work on A partition devices only. This instalelr will not work on devices that uses A/B partition like jesmine.
-~Should work fine with all PitchBlack Recovery 2.8.x & 2.9.x flashable zips.
-~Linux users need fastboot, adb & unzip Installed for this installer to work properly. 
-The installer script auto detects most if not all arch & debain based distros & auto installs them. If you face any error contact us
+
+
+Note: This installer will only work on A partition devices only. This installer will not work on devices that uses A/B partition like jesmine. It should work fine with all PitchBlack Recovery 2.8.x & 2.9.x flashable zips. Linux users need fastboot, adb & unzip Installed for this installer to work properly. The installer script auto detects most if not all arch & debian based distros & auto installs them. If you face any error contact us.
