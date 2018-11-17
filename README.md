@@ -38,7 +38,7 @@ Usages
 </h2>
 
 - Download and copy recovery flashable PBRP zip for your device to PBRP Installer folder
-- Goto recovey mode in your phone and connect it to your computer via usb
+- Goto fastboot mode in your phone and connect it to computer via usb
 - Windows users open pbinstaller.bat and follow from there
 - Linux user open a terminal in PBRP Installer folder and type bash pbinstaller.sh and follow from there
 
