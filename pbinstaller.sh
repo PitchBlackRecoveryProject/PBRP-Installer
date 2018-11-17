@@ -43,7 +43,7 @@ if [[ ( "$chkadb" != "/usr/bin/adb") || ( "$chkfastboot" != "/usr/bin/fastboot")
             sudo pacman -S android-tools unzip --noconfirm
         elif ID_LIKE=debian; then
             printf "${cyan}Debian based distro detected...\n\nInstalling debian stuff...\n${NC}\n"
-            sudo apt-get install android-tools-adb android-tools-fastboot unzip -y
+            sudo apt-get install adb fastboot unzip -y
         fi
 else true;
 fi
