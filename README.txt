@@ -1,41 +1,38 @@
-<h1 align="center">
-PitchBlack Recovery Installer for PC
-</h1>
 
-<h2 align="center">
+PitchBlack Recovery Installer
+==============================
+
+
 Getting started
-</h2>
+===============
 
- **Linux**
- 
+
+
+**Linux**
+
 - Open a terminal & type
 
-```bash
+            git clone https://github.com/PitchBlackRecoveryProject/PBRP-Installer.git
 
-git clone https://github.com/PitchBlackRecoveryProject/PBRP-Installer.git
-
-cd PBRP-Installer
-
-```
+            cd PBRP-Installer
 
 
- **Windows:**
+
+**Windows:**
 
 - Download this
 
-```bash
-
-https://github.com/PitchBlackRecoveryProject/PBRP-Installer/archive/master.zip
-
-```
+            https://github.com/PitchBlackRecoveryProject/PBRP-Installer/archive/master.zip
 
 - Unzip it
 
 
+(skip this if you already downloaded & unziped the installer)
 
-<h2 align="center">
+
 Usages
-</h2>
+======
+
 
 - Download and copy recovery flashable PBRP zip for your device to PBRP Installer folder
 - Goto fastboot mode in your phone and connect it to computer via usb
