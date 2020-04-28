@@ -1,6 +1,6 @@
 #!/bin/bash
 #A script to flash PitchBlack Recovery from linux
-#sloppy20181108 v1.1
+#sloppy20200429 v1.2
 blue='\033[0;34m'
 cyan='\033[0;36m'
 green='\e[0;32m'
@@ -50,29 +50,32 @@ fi
 echo
 printf "${RED}All required packages are installed!${NC}\n"
 echo
-printf "${RED}Press enter if you are in bootloader mode... ${NC}\n"
-read
+printf "${RED}Allow debugging in your phone... ${NC}\n"
+echo
+adb kill-server
+adb devices
 printf "${RED}Getting stuff ready... ${NC}\n"
 unzip PitchBlack*.zip > /dev/null
 rm -R META-INF
 echo
+printf "${RED}Pushing tools... ${NC}\n"
+adb shell rm -r /sdcard/PBRP/tools 2>/dev/null
+adb push PBRP /sdcard >/dev/null
+echo
+printf "${RED}Rebooting into fastboot... ${NC}\n"
+adb reboot bootloader
+echo
+printf "${RED}Press enter if you are in fastboot mode... ${NC}\n"
+read
 printf "${RED}Flashing PBRP... ${NC}\n"
 fastboot flash recovery TWRP/*.img 2>/dev/null
 echo
 printf "${RED}Booting into PBRP... ${NC}\n"
 fastboot boot TWRP/*.img 2>/dev/null
-rm -R TWRP
 echo
-printf "${RED}Press enter when PBRP fully boots... ${NC}\n"
-read
-printf "${RED}Pushing tools... ${NC}\n"
-adb shell rm -r /sdcard/PBRP/tools 2>/dev/null
-adb push PBRP /sdcard >/dev/null
-echo -e
-printf "${RED}Rebooting into PBRP... ${NC}\n"
-echo -e
-adb reboot recovery
-sleep 10
+sleep 15
+rm -R TWRP
 rm -R PBRP
+echo
 printf "${RED}ALL DONE! ${NC}\n"
 echo -e

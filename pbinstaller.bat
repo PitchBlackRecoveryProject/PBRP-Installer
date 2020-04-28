@@ -20,31 +20,34 @@ echo                                Welcome to PBRP installer
 echo. 
 echo  """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 echo.
-echo Press enter if you are in bootloader mode...
-pause
+echo Allow debugging in your phone...
 echo.
+bin\adb.exe kill-server
+bin\adb.exe devices
 echo Getting stuff ready...
 echo.
-bin\7z x PitchBlack*.zip >nul
+bin\7z.exe x PitchBlack*.zip >nul
 rmdir /s /q META-INF >nul
+echo Pushing tools... 
+bin\adb.exe shell rm -r /sdcard/PBRP/tools >nul 2>nul
+bin\adb.exe push PBRP /sdcard >nul 2>nul
+echo.
+echo Rebooting into fastboot...
+bin\adb.exe reboot bootloader
+echo.
+echo Press enter if you are in fastboot mode...
+pause >nul
+echo.
 echo Flashing PBRP...
-bin\fastboot flash recovery TWRP\recovery.img >nul 2>nul
+bin\fastboot.exe flash recovery TWRP\recovery.img >nul 2>nul
 echo.
 echo Booting into PBRP...
-bin\fastboot boot TWRP\recovery.img >nul 2>nul
+bin\fastboot.exe boot TWRP\recovery.img >nul 2>nul
+echo.
+timeout 15
 rmdir /s /q  TWRP >nul
-echo.
-echo Press enter when PBRP fully boots...
-pause
-echo.
-echo Pushing tools... 
-bin\adb shell rm -r /sdcard/PBRP/tools >nul 2>nul
-bin\adb push PBRP /sdcard >nul 2>nul
-echo.
-echo Rebooting into PBRP...
-echo.
-bin\adb reboot recovery
 rmdir /s /q PBRP >nul
+echo.
 echo ALL DONE
 echo.
 pause
